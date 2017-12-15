@@ -4,16 +4,17 @@ namespace App\Http\Proxy;
 
 
 use Illuminate\Support\Facades\Auth;
+use GuzzleHttp\Client;
 
 class TokenProxy
 {
     protected $http;
 
 
-    public function __construct(\GuzzleHttp\Client $http)
-    {
-        $this->http = $http;
-    }
+//    public function __construct(\GuzzleHttp\Client $http)
+//    {
+//        $this->http = $http;
+//    }
 
     public function login($email, $password)
     {
@@ -75,18 +76,27 @@ class TokenProxy
             'client_secret' => env('PASSPORT_CLIENT_SECRET'),
             'grant_type' => $grantType,
         ]);
-//
-        //注意这里的地址
-        $response = $this->http->post('http://www.yingshanhong.xyz/oauth/token', [
-            'form_params' => $data
+
+
+        $client = new Client();
+        $response = $client->request('GET', 'http://www.yingshanhong.xyz/oauth/token', [
+                        'form_params' => $data
+
         ]);
 
-//        $token = json_decode((string)$response->getBody(), true);
-//        return response()->json([
-//            'token' => $token['access_token'],
-//            'auth_id' => md5($token['refresh_token']),
-//            'expires_in' => $token['expires_in']
-//        ])->cookie('refreshToken', $token['refresh_token'], 14400, null, null, false, true);
+
+
+//        //注意这里的地址
+//        $response = $this->http->post('http://www.yingshanhong.xyz/oauth/token', [
+//            'form_params' => $data
+//        ]);
+
+        $token = json_decode((string)$response->getBody(), true);
+        return response()->json([
+            'token' => $token['access_token'],
+            'auth_id' => md5($token['refresh_token']),
+            'expires_in' => $token['expires_in']
+        ])->cookie('refreshToken', $token['refresh_token'], 14400, null, null, false, true);
 
     }
 
