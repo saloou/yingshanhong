@@ -76,11 +76,11 @@ class TokenProxy
             'grant_type' => $grantType,
         ]);
 //
-//        //注意这里的地址
-//        $response = $this->http->post('http://www.yingshanhong.xyz/oauth/token', [
-//            'form_params' => $data
-//        ]);
-//
+        //注意这里的地址
+        $response = $this->http->post('http://www.yingshanhong.xyz/oauth/token', [
+            'form_params' => $data
+        ]);
+
 //        $token = json_decode((string)$response->getBody(), true);
 //        return response()->json([
 //            'token' => $token['access_token'],
