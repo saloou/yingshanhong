@@ -79,7 +79,7 @@ class TokenProxy
 
 
         $client = new Client();
-        $response = $client->request('GET', 'http://www.yingshanhong.xyz/oauth/token', [
+        $response = $client->request('POST', 'http://www.yingshanhong.xyz/oauth/token', [
                         'form_params' => $data
 
         ]);
