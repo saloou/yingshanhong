@@ -72,14 +72,16 @@ class TokenProxy
     public function proxy($grantType, array $data = [])
     {
         $data = array_merge($data, [
-            'client_id' => env('PASSPORT_CLIENT_ID'),
-            'client_secret' => env('PASSPORT_CLIENT_SECRET'),
+            'client_id' =>'2',
+//            'client_id' => env('PASSPORT_CLIENT_ID'),
+            'client_secret' => '007NpUudRYEWPmzRmMQjv9RFjs1A7LyI25JARgK6',
+//            'client_secret' => env('PASSPORT_CLIENT_SECRET'),
             'grant_type' => $grantType,
         ]);
 
 
         $client = new Client();
-        $response = $client->request('POST', 'http://www.yingshanhong.xyz/oauth/token', [
+        $response = $client->request('POST', 'http://ysh.dev/oauth/token', [
                         'form_params' => $data
 
         ]);
