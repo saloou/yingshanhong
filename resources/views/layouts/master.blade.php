@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="/css/myStyle.css">
 
     <style>
+        body{
+            background-color: #2ab27b;
+        }
+
+        .navbar{
+            background-color: #2ab27b;
+
+            border-bottom: 1px solid #ffa500;
+        }
 
     </style>
 </head>

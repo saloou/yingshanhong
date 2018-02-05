@@ -41,6 +41,11 @@ let routes = [
         meta: {}
     },
     {
+        path: '/getQrCode',
+        component: require('./components/pages/QrCode.vue'),
+        meta: {}
+    },
+    {
         path: '/profile',
         component: require('./components/user/ProfileWrapper.vue'),
         children: [
