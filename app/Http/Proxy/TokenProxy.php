@@ -81,7 +81,7 @@ class TokenProxy
 
 
         /*用guzzleHttp客户端对象 发送post请求到oauth/token 携带form_params数组*/
-        $response = $this->http->post('http://ysh.dev/oauth/token', [
+        $response = $this->http->post('http://yingshanhong.xyz/oauth/token', [
             'form_params' => $data
         ]);
 
