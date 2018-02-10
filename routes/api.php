@@ -15,6 +15,11 @@ Route::get('/admin', function () {
 });
 
 
+Route::get('/getQrCode','GetQrCodeController@index')->middleware('auth:api');
+
+
+
+
 Route::get('/products','ProductController@index');
 Route::get('/products/{product}','ProductController@show');
 

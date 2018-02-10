@@ -12,13 +12,12 @@
 
     <style>
         body{
-            background-color: #2ab27b;
+            background-color: #463C54;
         }
 
         .navbar{
-            background-color: #2ab27b;
+            background-color: #463C54;
 
-            border-bottom: 1px solid #ffa500;
         }
 
     </style>
@@ -28,11 +27,6 @@
 <div id="app">
    <app></app>
 </div>
-
-
-
-
-
 
 <script src="/js/app.js"></script>
 

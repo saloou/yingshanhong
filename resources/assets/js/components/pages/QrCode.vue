@@ -1,27 +1,49 @@
+<style>
+    .qr-div {
+        margin-top: 50px;
+    }
+
+    .thar-one {
+        height: 40px;
+    }
+</style>
+
 <template>
     <div class="container">
 
-        <div class="row">
-            <div class="col-md-12 text-center">
-                <h2>映山红</h2>
+        <div class="row text-center">
+
+            <div class="text-center">
+                <img :src="QrCodePath" width="300" alt="">
             </div>
         </div>
 
-        <div class="row text-center">
-            <div class="col-md-12 text-center">
-                <!--<div class="col-md-3 col-sm-3 col-xs-6">-->
-                    <a href="#" class="btn btn-sm animated-button thar-one">获取二维码图像</a>
-                <!--</div>-->
-            </div>
+        <div class="qr-div text-center">
+            <a v-on:click="getQrCode" class="btn btn-sm animated-button thar-one"><h5>获取二维码图像</h5></a>
         </div>
 
     </div>
 </template>
 
+
 <script>
     export default {
         mounted() {
-            console.log('about页面输出.')
+//            this.getQrCode();
+        },
+
+        data() {
+            return {
+                QrCodePath: '',
+            }
+        },
+        methods: {
+            getQrCode() {
+                axios.get('/api/getQrCode').then(response => {
+                    this.QrCodePath = response.data;
+                });
+            },
         }
     }
+
 </script>

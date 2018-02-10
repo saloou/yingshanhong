@@ -30,7 +30,7 @@ class AuthServiceProvider extends ServiceProvider
         //laravel passport 用到的配置
         Passport::routes();
 
-        Passport::tokensExpireIn(Carbon::now()->addMinutes(30));
+        Passport::tokensExpireIn(Carbon::now()->addMinutes(300));
 
         Passport::refreshTokensExpireIn(Carbon::now()->addDays(10));
 

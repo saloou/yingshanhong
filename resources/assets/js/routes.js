@@ -43,7 +43,7 @@ let routes = [
     {
         path: '/getQrCode',
         component: require('./components/pages/QrCode.vue'),
-        meta: {}
+        meta: {requiresAuth: true}
     },
     {
         path: '/profile',
