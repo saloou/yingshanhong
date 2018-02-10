@@ -10,9 +10,8 @@
     <div class="container">
 
         <div class="row text-center">
-
             <div class="text-center">
-                <img :src="QrCodePath" width="300" alt="">
+                <img :src="QrCodePath">
             </div>
         </div>
 

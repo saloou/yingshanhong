@@ -53130,7 +53130,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -53164,7 +53163,7 @@ var render = function() {
   return _c("div", { staticClass: "container" }, [
     _c("div", { staticClass: "row text-center" }, [
       _c("div", { staticClass: "text-center" }, [
-        _c("img", { attrs: { src: _vm.QrCodePath, width: "300", alt: "" } })
+        _c("img", { attrs: { src: _vm.QrCodePath } })
       ])
     ]),
     _vm._v(" "),
