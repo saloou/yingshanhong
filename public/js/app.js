@@ -53131,8 +53131,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 //
 //
 //
-//
-//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
     mounted: function mounted() {
@@ -53177,7 +53175,7 @@ var render = function() {
           staticClass: "btn btn-sm animated-button thar-one",
           on: { click: _vm.getQrCode }
         },
-        [_c("h5", [_vm._v("获取二维码图像")])]
+        [_vm._v("获取二维码图像")]
       )
     ])
   ])
@@ -56806,7 +56804,7 @@ exports = module.exports = __webpack_require__(8)(undefined);
 
 
 // module
-exports.push([module.i, "\n.qr-div {\n    margin-top: 50px;\n}\n.thar-one {\n    height: 40px;\n}\n", ""]);
+exports.push([module.i, "\n.qr-div {\n    margin-top: 50px;\n}\n\n\n", ""]);
 
 // exports
 

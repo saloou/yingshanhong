@@ -3,9 +3,7 @@
         margin-top: 50px;
     }
 
-    .thar-one {
-        height: 40px;
-    }
+
 </style>
 
 <template>
@@ -19,7 +17,7 @@
         </div>
 
         <div class="qr-div text-center">
-            <a v-on:click="getQrCode" class="btn btn-sm animated-button thar-one"><h5>获取二维码图像</h5></a>
+            <a v-on:click="getQrCode" class="btn btn-sm animated-button thar-one">获取二维码图像</a>
         </div>
 
     </div>

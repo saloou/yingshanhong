@@ -13,7 +13,7 @@ class GetQrCodeController extends Controller
             mkdir(public_path('qrcodes'));
 
         QrCode::format('png')->size(300)->generate('Hello,LaravelAcademy!',public_path('qrcodes/qrcode.png'));
-//        QrCode::generate('Hello,LaravelAcademy!', public_path('qrcodes/qrcode.svg'));
+
 
         $QrCodePath="qrcodes/qrcode.png";
         return $QrCodePath ;
