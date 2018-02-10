@@ -17,7 +17,6 @@
 
         .navbar{
             background-color: #463C54;
-
         }
 
     </style>

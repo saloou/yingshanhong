@@ -19683,6 +19683,10 @@ __WEBPACK_IMPORTED_MODULE_0_vue___default.a.use(__WEBPACK_IMPORTED_MODULE_1_vuex
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
+function injectStyle (ssrContext) {
+  if (disposed) return
+  __webpack_require__(152)
+}
 var normalizeComponent = __webpack_require__(0)
 /* script */
 var __vue_script__ = __webpack_require__(128)
@@ -19691,7 +19695,7 @@ var __vue_template__ = __webpack_require__(129)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
-var __vue_styles__ = null
+var __vue_styles__ = injectStyle
 /* scopeId */
 var __vue_scopeId__ = null
 /* moduleIdentifier (server only) */
@@ -56130,6 +56134,13 @@ var _extends = Object.assign || function (target) { for (var i = 1; i < argument
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -56174,7 +56185,10 @@ var render = function() {
           [
             _c(
               "router-link",
-              { staticClass: "navbar-brand", attrs: { to: "/" } },
+              {
+                staticClass: "navbar-brand",
+                attrs: { id: "nav-title", to: "/" }
+              },
               [_vm._v("映山红")]
             ),
             _vm._v(" "),
@@ -56198,13 +56212,13 @@ var render = function() {
                   ? _c(
                       "router-link",
                       { attrs: { to: "/register", tag: "li" } },
-                      [_c("a", [_vm._v("注册")])]
+                      [_c("a", { attrs: { id: "nav-reg" } }, [_vm._v("注册")])]
                     )
                   : _vm._e(),
                 _vm._v(" "),
                 !_vm.user.authenticated
                   ? _c("router-link", { attrs: { to: "/login", tag: "li" } }, [
-                      _c("a", [_vm._v("登陆")])
+                      _c("a", { attrs: { id: "nav-log" } }, [_vm._v("登陆")])
                     ])
                   : _vm._e(),
                 _vm._v(" "),
@@ -56212,7 +56226,11 @@ var render = function() {
                   ? _c(
                       "router-link",
                       { attrs: { to: "/profile", tag: "li" } },
-                      [_c("a", [_vm._v("个人中心")])]
+                      [
+                        _c("a", { attrs: { id: "nav-name" } }, [
+                          _vm._v(_vm._s(_vm.user.name))
+                        ])
+                      ]
                     )
                   : _vm._e(),
                 _vm._v(" "),
@@ -56220,7 +56238,11 @@ var render = function() {
                   ? _c(
                       "router-link",
                       { attrs: { to: "/getQrCode", tag: "li" } },
-                      [_c("a", [_vm._v("生成二维码")])]
+                      [
+                        _c("a", { attrs: { id: "nav-qrCode" } }, [
+                          _vm._v("生成二维码")
+                        ])
+                      ]
                     )
                   : _vm._e(),
                 _vm._v(" "),
@@ -56229,7 +56251,7 @@ var render = function() {
                       _c(
                         "a",
                         {
-                          attrs: { href: "#" },
+                          attrs: { id: "nav-out", href: "#" },
                           on: {
                             click: function($event) {
                               $event.preventDefault()
@@ -56900,6 +56922,46 @@ if (false) {
     require("vue-hot-reload-api")      .rerender("data-v-17fe1a58", module.exports)
   }
 }
+
+/***/ }),
+/* 152 */
+/***/ (function(module, exports, __webpack_require__) {
+
+// style-loader: Adds some css to the DOM by adding a <style> tag
+
+// load the styles
+var content = __webpack_require__(153);
+if(typeof content === 'string') content = [[module.i, content, '']];
+if(content.locals) module.exports = content.locals;
+// add the styles to the DOM
+var update = __webpack_require__(9)("554241d8", content, false);
+// Hot Module Replacement
+if(false) {
+ // When the styles change, update the <style> tags
+ if(!content.locals) {
+   module.hot.accept("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6b9c0432\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./TopMenu.vue", function() {
+     var newContent = require("!!../../../../../node_modules/css-loader/index.js!../../../../../node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-6b9c0432\",\"scoped\":false,\"hasInlineConfig\":true}!../../../../../node_modules/vue-loader/lib/selector.js?type=styles&index=0&bustCache!./TopMenu.vue");
+     if(typeof newContent === 'string') newContent = [[module.id, newContent, '']];
+     update(newContent);
+   });
+ }
+ // When the module is disposed, remove the <style> tags
+ module.hot.dispose(function() { update(); });
+}
+
+/***/ }),
+/* 153 */
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__(8)(undefined);
+// imports
+
+
+// module
+exports.push([module.i, "\n#nav-title,#nav-reg,#nav-log,#nav-name,#nav-qrCode,#nav-out{\n    color: #FFFFFF;\n}\n\n\n", ""]);
+
+// exports
+
 
 /***/ })
 /******/ ]);
